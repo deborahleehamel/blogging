@@ -4,9 +4,11 @@ class Post < ApplicationRecord
   validates :author, presence: true
 
 
-  def published
+  def publish
+    update_attribute(:published, true)
   end
 
-  def unpublished
+  def unpublish
+    update_attribute(:published, false)
   end
 end

@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -15,6 +19,11 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def update
+    post = Post.find[params[:id]]
+    post.publish
   end
 
   private
