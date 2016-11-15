@@ -4,6 +4,21 @@
      <p>
        All the Posts
      </p>
+
+
+       <div class="">
+         <h3>Search by title:</h3>
+         <input type="text" class="form-control" id="title-search-box">
+       </div>
+       <div class="">
+         <h3>Search by author:</h3>
+         <input type="text" class="form-control" id="author-search-box">
+       </div>
+       <br>
+
+
+
+
      <div class="buttons">
         <%= link_to "Add New Post", new_post_path, class: "btn btn-success" %>
         <button type="button" class="btn btn-primary" id="unpublished">Review unpublished posts</button>
@@ -30,9 +45,10 @@
 <div id="published-posts">
   <h1>Published Posts</h1>
   <% published(@posts, true).each do |post| %>
-  <div class="post_wrapper">
-    <h2 class="title"> <%= link_to post.title, post %>
+  <div class="post">
+    <h2 class="title post-title"> <%= link_to post.title, post %>
     </h2>
+    <h3 class="post-author"> <%= post.author %></h3>
     <p class="date"> <%= post.created_at.strftime('%-b %-d, %Y') %>
     </p>
 
