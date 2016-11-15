@@ -9,9 +9,7 @@ var setPublished = function(){
     $.ajax({
       method: "PATCH",
       url: "/publish/" + postId,
-      success: function(post){
-        debugger;
-
+      success: function(){
       }
 
     });
