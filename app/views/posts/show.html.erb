@@ -12,6 +12,15 @@
     <p class="author">
       <%= @post.author %>
     </p>
+
+    <div id="comments">
+      <h2> <%= @post.comments.count %> Comments </h2>
+      <%= render @post.comments %>
+
+      <h3>Add a comment</h3>
+      <%= render "comments/form" %>
+    </div>
+
   </div>
   <%= link_to "<< Back to Post Index", root_path %> | <button data-id="<%= @post.id %>" id="publish_post" type="button">Publish this post</button>
 </div>

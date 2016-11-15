@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "user can add a post" do
+RSpec.feature "user can add a comment" do
 
   context "valid body and title submitted" do
     scenario "sees post appear on index page" do
@@ -14,7 +14,7 @@ RSpec.feature "user can add a post" do
       fill_in "Author", with: "Deb"
       click_on "Create Post"
 
-      expect(page).to have_content("Amazing Post")      
+      expect(page).to have_content("Amazing Post")
     end
   end
 end
