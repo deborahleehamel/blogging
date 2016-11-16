@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/mbleigh/acts-as-taggable-on
+  revision: 8e64c3d4a81cfbb8af621228eae36a65c1f94501
+  specs:
+    acts-as-taggable-on (4.0.0)
+      activerecord (>= 4.0)
+
+GIT
   remote: https://github.com/rails/rails-controller-testing
   revision: d942a5d239a4b34cf93e86ca35e49f464e516ede
   specs:
@@ -221,6 +228,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara

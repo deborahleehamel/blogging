@@ -5,38 +5,17 @@
        All the Posts
      </p>
 
-
-       <div class="">
-         <h3>Search by title:</h3>
-         <input type="text" class="form-control" id="title-search-box">
-       </div>
-       <div class="">
-         <h3>Search by author:</h3>
-         <input type="text" class="form-control" id="author-search-box">
-       </div>
-       <br>
-       <div id='sort-title' class="text-center">
-         <button id='sort-title-button'>Sort list by Title</button>
-       </div>
-       <br>
-       <div id='sort-comment-count' class="text-center">
-         <button id='sort-count-button'>Sort list by Comment Count</button>
-       </div>
-
-
-
-
-
      <div class="buttons">
         <%= link_to "Add New Post", new_post_path, class: "btn btn-success" %>
-        <button type="button" class="btn btn-primary" id="unpublished">Review unpublished posts</button>
+        <button type="button" class="btn btn-warning" id="unpublished">Review unpublished posts</button>
+          <%= link_to "View all published posts", posts_path, class: "btn btn-info" %>
      </div>
    </div>
 
    <div id="unpublished-posts" class="hidden">
      <h1>Unpublished Posts</h1>
      <% published(@posts, false).each do |post| %>
-       <div class="post_wrapper">
+       <div class="post_wrapper well">
          <h2 class="title"> <%= link_to post.title, post %>
          </h2>
          <p class="date"> <%= post.created_at.strftime('%-b %-d, %Y') %>
@@ -51,12 +30,32 @@
 
 
 <div id="published-posts">
+  <div class="">
+    <h3>Search by title:</h3>
+    <input type="text" class="form-control" id="title-search-box">
+  </div>
+  <div class="">
+    <h3>Search by author:</h3>
+    <input type="text" class="form-control" id="author-search-box">
+  </div>
+  <br>
+  <div id='sort-title' class="text-center">
+    <button id='sort-title-button'>Sort list by Title</button>
+  </div>
+  <br>
+  <div id='sort-comment-count' class="text-center">
+    <button id='sort-count-button'>Sort list by Comment Count</button>
+  </div>
+
   <h1>Published Posts</h1>
   <% published(@posts, true).each do |post| %>
-  <div class="post">
+  <div class="post well">
     <h2 class="title post-title"> <%= link_to post.title, post %>
     </h2>
-    <h3 class="post-author"> <%= post.author %></h3>
+    <p class="post-tag">
+      Tags: <%= raw(post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
+    </p>
+    <h3 class="post-author">Author: <%= post.author %></h3>
     <p class="date"> <%= post.created_at.strftime('%-b %-d, %Y') %>
     </p>
 

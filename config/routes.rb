@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'tags/:tag', to: 'posts#index', as: :tag
   patch '/publish/:id', to: 'posts#update'
 end
