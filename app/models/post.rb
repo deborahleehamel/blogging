@@ -17,4 +17,11 @@ class Post < ApplicationRecord
     where("published = true")
     .order("title")
   end
+
+  def self.sort_by_count
+    where("published = true")
+    .joins(:comments)
+    .group("posts.id")
+    .order("count(comments.id)")
+  end
 end

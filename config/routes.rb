@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/posts/sort_by_title', to: 'posts#index'
+      get '/posts/sort_by_count', to: 'posts#count_index'
     end
   end
 
