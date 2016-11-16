@@ -12,4 +12,9 @@ class Post < ApplicationRecord
   def unpublish
     update_attribute(:published, false)
   end
+
+  def self.sort_by_title
+    where("published = true")
+    .order("title")
+  end
 end
