@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  acts_as_taggable_on :tag
   has_many :comments, dependent: :destroy
   validates :title, presence: true
   validates :body, presence: true

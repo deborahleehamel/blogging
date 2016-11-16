@@ -15,6 +15,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'redcarpet'
 gem 'coderay'
 gem 'jquery-turbolinks'
+gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 
 
 
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem "rails-controller-testing", :git => "https://github.com/rails/rails-controller-testing"
 end
 
 group :development do

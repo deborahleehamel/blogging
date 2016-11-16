@@ -2,7 +2,6 @@ $(document).ready(function() {
   sortByTitle();
 });
 
-
 var sortByTitle = function() {
   $("#sort-title-button").on('click', function() {
     $.ajax({
