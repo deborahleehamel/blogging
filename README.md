@@ -1,6 +1,6 @@
 # Blogging
 
-## LIVE in production at [Heroku](https://.herokuapp.com/)
+## LIVE in production at [Heroku](ttps://cryptic-inlet-99786.herokuapp.com)
 
 Blogging is a small blogging application.
 
