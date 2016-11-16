@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <%= render "layouts/nav_bar" %>
+
+       <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert") %>
+       <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,28 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+    <h1 class="title"><%= @post.title %></h1>
+    <p class="date">Published <%= time_ago_in_words(@post.created_at) %> Ago
+  </p>
+
+    <p class="body">
+      <%= markdown(@post.body) %>
+    </p>
+    <p class="author">
+      <%= @post.author %>
+    </p>
+
+    <div id="comments">
+      <h2> <%= @post.comments.count %> Comments </h2>
+      <%= render @post.comments %>
+
+      <h3>Add a comment</h3>
+      <%= render "comments/form" %>
+    </div>
+
+  </div>
+  <%= link_to "<< Back to Post Index", root_path %> | <button data-id="<%= @post.id %>" id="publish_post" type="button">Publish this post</button>
+</div>
+
+</div>
