@@ -1,12 +1,11 @@
 # Blogging
 
-## LIVE in production at [Heroku](ttps://cryptic-inlet-99786.herokuapp.com)
+## LIVE in production at [Heroku](https://cryptic-inlet-99786.herokuapp.com)
 
 Blogging is a small blogging application.
 
 We build out a rails application that allows an authenticated user to:
   * users can create "Posts"
-  * users can categorize posts with "Tags"
   * users can add "Comments" about existing posts
   * users should only see published posts
 
