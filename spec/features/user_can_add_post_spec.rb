@@ -1,9 +1,9 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.feature "User can publish post" do
+RSpec.feature "user can add a post" do
 
-  context "post is created" do
-    scenario "publishes unpublished post" do
+  context "valid body and title submitted" do
+    scenario "sees post appear on index page" do
 
       visit "/"
 
@@ -14,12 +14,7 @@ RSpec.feature "User can publish post" do
       fill_in "Author", with: "Deb"
       click_on "Create Post"
 
-      expect(current_path).to eq('/')
-
-      click_on "Review unpublished posts"
-
       expect(page).to have_content("Amazing Post")
     end
   end
-
 end
